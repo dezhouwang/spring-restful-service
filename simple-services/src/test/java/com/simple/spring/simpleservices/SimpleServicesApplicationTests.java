@@ -34,6 +34,11 @@ public class SimpleServicesApplicationTests {
 	// Test different test cases for users output based on query parameters supplied
 	@Test
 	public void test_users_output() throws Exception {
+		
+		this.mockMvc.perform(get("/load")
+	            )
+	            .andExpect(status().isOk());
+		
 		// test to see if valid range product correct output
 	    this.mockMvc.perform(get("/users")
 	    		.param("min", "0")
@@ -57,7 +62,7 @@ public class SimpleServicesApplicationTests {
 	    // test min invalid input, max valid input
 	    this.mockMvc.perform(get("/users")
 	    		.param("min", "abcd")
-	            .param("max", "9999")
+	            .param("max", "4001")
 	            )
 	            .andExpect(status().isOk()) 
 	            .andExpect(content().contentType("application/json;charset=UTF-8"))
