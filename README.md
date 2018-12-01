@@ -26,9 +26,32 @@ CREATE TABLE user (
 http://localhost:8080/
 ```
 2.2. The landing page allows you to:
-1) Query user database using salary filter
-2) Uploading csv file to populate into the database (see the `./db/users.csv` as an example)
-3) The option to refresh the database based on the csv files stored in `/db/*.csv` directory
+
+2.2.1) Query user database using salary filter
+
+```
+Note: If you do not see any user outputs (empty), you need to populate the database (go to step 2.2.3) to click on the button `Load Dataset into Database`
+```
+
+2.2.2) Uploading csv file to populate into the database (see the `./db/users.csv` as an example)
+
+You can upload as many .csv files to populate users as you like
+
+Do note that you have to conform to the format in csv:
+```
+name, salary
+tan ah kow, 4000
+joe jim, 1098.80
+```
+
+After uploading the csv into the project `/db/` directory, the server will automatically update it into the Database.
+
+2.2.3) The option to refresh the database based on the csv files stored in `/db/*.csv` directory
+
+```
+Requires you to run once to populate the Database, initially the Database is empty.
+```
+
 
 ##### Query users' salaries and name
 ```
